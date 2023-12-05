@@ -1,0 +1,264 @@
+.services {
+	&__container {
+		overflow: hidden;
+	}
+
+	&__block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		text-align: center;
+	}
+
+	&__box {
+		& > div {
+			position: relative;
+
+			img {
+				width: 100%;
+				min-height: 200px;
+				max-height: 345px;
+				transform: scale(0.95);
+				cursor: pointer;
+				transition: 0.4s;
+				border-radius: 5px;
+
+				&:hover {
+					transform: scale(1);
+				}
+			}
+		}
+	}
+
+	&__subtitle {
+		position: absolute;
+		top: 22%;
+		width: 100%;
+		text-align: center;
+		font-size: 4vw;
+		font-weight: 600;
+		color: white;
+		text-shadow: #181818 1px 0 10px;
+		pointer-events: none;
+	}
+
+	&__info {
+		margin: 10px 0 20px;
+		font-size: 16px;
+		text-align: start;
+		line-height: 22px;
+		color: #181818;
+		opacity: .8;
+
+		span {
+			font-weight: 600;
+		}
+	}
+
+	&__list {
+		width: 100%;
+		margin-bottom: 75px;
+
+		li {
+			position: relative;
+			padding: 20px;
+			margin-bottom: 20px;
+			font-size: 18px;
+			text-align: start;
+			border-radius: 10px;
+			color: white;
+			background: linear-gradient(45deg, #2e3459, #6a7df3);
+			letter-spacing: 1px;
+			cursor: pointer;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 16px;
+				right: 11px;
+				background-image: url(../images/services/arrow-down.svg);
+				background-repeat: no-repeat;
+				width: 24px;
+				height: 24px;
+				filter: invert(1);
+			}
+
+			&:hover {
+				background: linear-gradient(45deg, #6a7df3, #2e3459);
+
+				&::after {
+					animation: 2s move linear infinite;
+				}
+			}
+
+			&:last-of-type {
+				margin: 0;
+			}
+		}
+
+		&--sec {
+			margin-top: 20px;
+			text-align: start;
+
+			li {
+				position: relative;
+				margin: 0 0 25px 45px;
+				font-size: 18px;
+				color: #05156f;
+				font-weight: 600;
+				transition: 0.6s;
+				cursor: pointer;
+	
+				&::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: -44px;
+					background-image: url(../images/services/check.svg);
+					background-repeat: no-repeat;
+					background-size: cover;
+					width: 24px;
+					height: 24px;
+				}
+
+				&:last-of-type {
+					margin: 0 0 0 45px;
+				}
+
+				&:hover {
+					transform: translateX(10px);
+				}
+			}
+		}
+	}
+}
+
+@media(min-width: 768px) {
+	.services {
+		&__block {
+			& > div {
+				position: relative;
+
+				p {
+					font-size: 22px;
+					line-height: 26px;
+				}
+			}
+	
+			img {
+				height: 315px;
+			}
+		}
+
+		&__list {
+			width: 75%;
+			margin: 0 auto;
+			padding-bottom: 60px;
+
+			li {
+				padding: 15px 0 15px 35px;
+				font-size: 22px;
+
+				&::after {
+					top: 14px;
+					right: 10px;
+					width: 30px;
+					height: 30px;
+				}
+			}
+
+			&--sec {
+				li {
+					margin-bottom: 30px;
+					font-size: 21px;
+				}
+			}
+		}
+	}
+}
+
+@media(min-width: 1200px) {
+	.services {
+		&__title {
+			margin-bottom: 30px;
+		}
+
+		&__subtitle {
+			font-size: 30px;
+			top: 30%;
+			line-height: 30px;
+			letter-spacing: 1px;
+		}
+
+		&__box {
+			& > div {
+				display: flex;
+				align-items: center;
+				margin-bottom: 20px;
+	
+				img {
+					width: 100%;
+					height: 450px;
+					transform: scale(0.95);
+					cursor: pointer;
+					transition: 0.4s;
+					border-radius: 10px;
+	
+					&:hover {
+						transform: scale(0.97);
+					}
+				}
+
+				p {
+					margin: 0;
+					width: fit-content;
+					left: 153px;
+					font-size: 28px;
+					line-height: 32px;
+				}
+			}
+		}
+
+		&__list {
+			width: 750px;
+
+			li {
+				font-size: 30px;
+
+				&::after {
+					top: 12px;
+					right: 20px;
+					width: 35px;
+					height: 35px;
+					background-size: cover;
+				}
+			}
+
+			&--sec {
+				li {
+					margin-bottom: 35px;
+					font-size: 30px;
+
+					&::before {
+						top: 3px;
+						width: 30px;
+						height: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

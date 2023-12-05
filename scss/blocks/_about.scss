@@ -1,0 +1,99 @@
+.about {
+	overflow: hidden;
+
+	&__text {
+		margin-bottom: 15px;
+		font-size: 20px;
+		line-height: 30px;
+		text-align: start;
+		color: #181818;
+
+		span {
+			font-weight: 600;
+			color: #181818;
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&__cars {
+		margin-top: 20px;
+
+		& > div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			&:last-of-type {
+				justify-content: space-around;
+				margin-top: 35px;
+			}
+		}
+	}
+
+	&__car {
+		width: 80px;
+		transition: transform 1.2s linear;
+		cursor: pointer;
+
+		&:hover {
+			transform: rotateY(360deg);
+		}
+
+		&--volvo {
+			width: 70px;
+		}
+	}
+}
+
+@media(min-width: 768px) {
+	.about {
+		&__title {
+			margin-bottom: 35px;
+		}
+
+		&__text {
+			font-size: 24px;
+			line-height: 33px;
+		}
+
+		&__cars {
+			margin-top: 45px;
+		}
+
+		&__car {
+			width: 100px;
+
+			&--volvo {
+				width: 90px;
+			}
+		}
+	}
+}
+
+@media(min-width: 1200px) {
+	.about {
+		&__text {
+			font-size: 34px;
+			line-height: 40px;
+		}
+
+		&__cars {
+			& > div {
+				&:last-of-type {
+					margin-top: 50px;
+				}
+			}
+		}
+
+		&__car {
+			width: 120px;
+
+			&--volvo {
+				width: 110px;
+			}
+		}
+	}
+}
