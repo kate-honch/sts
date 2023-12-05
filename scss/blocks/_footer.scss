@@ -23,17 +23,6 @@
 			text-decoration: none;
 		}
 
-
-		&:hover {
-			transform: scale(1.02);
-
-			a {
-				&:hover {
-					color: #0028ed;
-				}
-			}
-		}
-
 		&:last-of-type {
 			margin-bottom: 25px;
 		}
@@ -48,6 +37,18 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+
+		p {
+			&:hover {
+				transform: scale(1.02);
+
+				a {
+					&:hover {
+						color: #0028ed;
+					}
+				}
+			}
+		}
 	}
 }
 
